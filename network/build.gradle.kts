@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
+    id("com.google.devtools.ksp")
 }
 
 java {
@@ -14,6 +15,10 @@ kotlin {
     }
 
     dependencies {
+
+        // Dagger
+        implementation(libs.dagger)
+        ksp(libs.dagger.compiler)
 
         // Retrofit
         implementation(libs.retrofit)

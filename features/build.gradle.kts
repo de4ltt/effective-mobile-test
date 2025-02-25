@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
+    id("com.google.devtools.ksp")
 }
 
 java {
@@ -11,5 +12,12 @@ java {
 kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+    }
+
+    dependencies {
+
+        // Dagger
+        implementation(libs.dagger)
+        ksp(libs.dagger.compiler)
     }
 }

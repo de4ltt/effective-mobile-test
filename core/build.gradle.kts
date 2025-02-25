@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.core"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 31
@@ -33,6 +34,10 @@ android {
 }
 
 dependencies {
+
+    // Dagger
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

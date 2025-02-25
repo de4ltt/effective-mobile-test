@@ -14,6 +14,18 @@ kotlin {
     }
 
     dependencies {
+
+        // Retrofit
         implementation(libs.retrofit)
+
+        // Gson converter
+        implementation(libs.converter.gson)
+
+        // OkHttp
+        implementation(libs.okhttp)
+        implementation(libs.logging.interceptor)
+
+        // Coroutines
+        implementation(libs.kotlinx.coroutines.android)
     }
 }

@@ -21,9 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "WorkApp"
 include(":app")
-include(":core")
 include(":network")
 include(":features")
 include(":features:login")
 include(":features:favourites")
 include(":features:jobs")
+include(":core")

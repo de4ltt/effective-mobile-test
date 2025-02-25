@@ -2,15 +2,12 @@ package com.example.network.client
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private const val BASE_URL = "https://work.example.com/"
 
     private val okHttpClient: OkHttpClient by lazy {
         val logging = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
         }
         OkHttpClient.Builder()
             .addInterceptor(logging)
@@ -21,11 +18,11 @@ object RetrofitClient {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(Gso.create())
             .build()
     }
 
-    val vacanciesApi: VacanciesApi by lazy {
-        retrofit.create(VacanciesApi::class.java)
+    val workAPI: WorkAPI by lazy {
+        retrofit.create(WorkAPI::class.java)
     }
 }

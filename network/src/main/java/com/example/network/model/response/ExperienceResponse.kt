@@ -1,4 +1,4 @@
-package com.example.network.model
+package com.example.network.model.response
 
 data class ExperienceResponse(
     val previewText: String,
